@@ -30,10 +30,10 @@ jobs:
         id: set-var
         run: |
           echo "ECR_REGISTRY=${{ steps.login-ecr.outputs.registry }}" >> $GITHUB_ENV
-          echo "ECR_REPOSITORY=fast" >> $GITHUB_ENV #본인 ecr레포에 맞게 수정
+          echo "ECR_REPOSITORY=jimmy-fastapi" >> $GITHUB_ENV
           echo "IMAGE_TAG=${{ github.run_number }}" >> $GITHUB_ENV
-          echo "GIT_EMAIL=oolralra@gmail.com" >> $GITHUB_ENV
-          echo "GIT_NAME=oolralra" >> $GITHUB_ENV
+          echo "GIT_EMAIL=kjhappy77@gmail.com" >> $GITHUB_ENV
+          echo "GIT_NAME=kjhappy77" >> $GITHUB_ENV
 
       - name: Docker Image Build
         id: build-image
