@@ -45,6 +45,11 @@ jobs:                                        # 작업을 선언할게
           docker build -t ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} .
         # 환경변수(GITHUB_ENV)에 저장했던 값 중에 필요한 것을 들고온다.
 
+      - name: Docker image Push                # 컨테이너 이미지 ECR 푸쉬 액션
+        id: push-image
+        run: |
+          docker push ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
+
       - name: Checkout Deployment Repository      # 대상을 소스코드에서 배포용 레포지토리로 변경 액션
         uses: actions/checkout@v4
         with:
