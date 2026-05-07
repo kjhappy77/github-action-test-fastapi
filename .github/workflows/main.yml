@@ -50,7 +50,7 @@ jobs:                                        # 작업을 선언할게
         with:
           repository: kjhappy77/sfapp             # Manifest가 저장되어있는 배포용 레포지토리 매핑
           ref: main                               # 대상 branch 이름
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GH_PAT_TOKEN }}      # 이름 매핑 주의!!!
 
       - name: k8s Deployment manifest update      # 변경된 대상 레포지토리에 있는 Manifest 업데이트 액션
         run:  |
